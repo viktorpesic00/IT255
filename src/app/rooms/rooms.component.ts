@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Room } from '../models/room.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RoomService } from '../services/roomService';
 
 @Component({
   selector: 'app-rooms',
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RoomsComponent implements OnInit {
   @Input() room: Room;
   rooms: Room[] = [];
+  totalPrice: number;
 
   roomForm = new FormGroup({
     roomNumber: new FormControl(null, Validators.required),
@@ -28,7 +30,7 @@ export class RoomsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  constructor() {}
+  constructor(private roomService: RoomService) {}
 
   incrementSauna(checked: Event, index: number) {
     let totalPrice = this?.roomForm?.get('price')?.value;
@@ -43,23 +45,53 @@ export class RoomsComponent implements OnInit {
     this.roomForm.get('price').setValue(totalPrice);
   }
 
+  calculateTotalPrice() {
+    let numberOfNights = this.roomForm.get('numberOfNights')?.value;
+    let price = this.roomForm.get('price')?.value;
+    console.log(numberOfNights, 'numberOfNights');
+    console.log(price, 'price');
+    // @ts-ignore
+    this.totalPrice = this.roomService.getPrice(numberOfNights, price);
+  }
+
   checkDescription(description: string) {
     return description.length < 6;
   }
+  // addRoom(
+  //   roomNumber: HTMLInputElement,
+  //   floor: HTMLInputElement,
+  //   description: HTMLInputElement,
+  //   price: HTMLInputElement
+  // ): boolean {
+  //   this.rooms.push(
+  //     new Room(
+  //       parseInt(roomNumber.value),
+  //       description.value,
+  //       parseFloat(price.value),
+  //       parseInt(floor.value)
+  //     )
+  //   );
+  //   return false;
+  // }
   addRoom(
     roomNumber: HTMLInputElement,
     floor: HTMLInputElement,
     description: HTMLInputElement,
-    price: HTMLInputElement
-  ): boolean {
+    price: HTMLInputElement,
+    numberOfNights: HTMLInputElement
+  ) {
+    this.calculateTotalPrice();
     this.rooms.push(
       new Room(
         parseInt(roomNumber.value),
         description.value,
         parseFloat(price.value),
-        parseInt(floor.value)
+        parseInt(floor.value),
+        parseInt(numberOfNights.value)
       )
     );
-    return false;
+    this.roomForm.reset();
+    // @ts-ignore
+    this.roomForm.get('price').setValue(null);
   }
 }
