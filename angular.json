@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IT255-dz10": {
+    "IT255-DZ11": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/it255-dz10",
+            "outputPath": "dist/it255-DZ11",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "IT255-dz10:build:production"
+              "browserTarget": "IT255-DZ11:build:production"
             },
             "development": {
-              "browserTarget": "IT255-dz10:build:development"
+              "browserTarget": "IT255-DZ11:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,7 +70,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IT255-dz10:build"
+            "browserTarget": "IT255-DZ11:build"
           }
         },
         "test": {

@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'IT255-dz10'`, () => {
+  it(`should have as title 'IT255-DZ11'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('IT255-dz10');
+    expect(app.title).toEqual('IT255-DZ11');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'IT255-dz10 app is running!'
+      'IT255-DZ11 app is running!'
     );
   });
 });
