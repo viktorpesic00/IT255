@@ -1,0 +1,20 @@
+{
+  "metHotels": [
+    {
+      "id": 3,
+      "brojSobe": "202",
+      "brojSprata": "2",
+      "opis": "opis",
+      "cena": "cena",
+      "brojNocenja": 3
+    },
+    {
+      "brojSobe": "1",
+      "brojSprata": "123",
+      "opis": "213",
+      "cena": "213123",
+      "brojNocenja": 123,
+      "id": 4
+    }
+  ]
+}

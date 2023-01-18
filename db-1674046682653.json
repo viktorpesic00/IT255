@@ -1,0 +1,36 @@
+{
+  "metHotels": [
+    {
+      "id": 0,
+      "brojSobe": "101",
+      "brojSprata": "1",
+      "opis": "opis",
+      "cena": "cena",
+      "brojNocenja": 3
+    },
+    {
+      "id": 1,
+      "brojSobe": "102",
+      "brojSprata": "1",
+      "opis": "opis",
+      "cena": "cena",
+      "brojNocenja": 3
+    },
+    {
+      "id": 2,
+      "brojSobe": "103",
+      "brojSprata": "1",
+      "opis": "opis",
+      "cena": "cena",
+      "brojNocenja": 3
+    },
+    {
+      "id": 3,
+      "brojSobe": "201",
+      "brojSprata": "2",
+      "opis": "opis",
+      "cena": "cena",
+      "brojNocenja": 3
+    }
+  ]
+}

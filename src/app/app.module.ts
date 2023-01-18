@@ -5,9 +5,16 @@ import { AppComponent } from './app.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MethotelsCrudComponent } from './methotels-crud/methotels-crud.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent, RoomsComponent, NavbarComponent],
-  imports: [BrowserModule, ReactiveFormsModule, FormsModule],
+  declarations: [
+    AppComponent,
+    RoomsComponent,
+    NavbarComponent,
+    MethotelsCrudComponent,
+  ],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
   providers: [RoomService],
   bootstrap: [AppComponent],
 })
